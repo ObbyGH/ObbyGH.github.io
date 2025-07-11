@@ -1,0 +1,233 @@
+/* main styles */
+* {
+    box-sizing: border-box;
+    font-family: Trebuchet MS, sans-serif;
+    --nav-color: rgba(216, 238, 252, 0.9);
+    --background-color1: #032035;
+    --background-color2: #030735;
+    --text-color1: #cce8f9;
+    --text-color2: #14a8e8;
+}
+body {
+background: linear-gradient(
+    90deg,var(--background-color1), var(--background-color2)
+  );
+}
+
+/* navigation bar section */
+#navbar {
+    position: fixed;
+    height: 80px;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    background-color: var(--nav-color); 
+    z-index: 3;
+    box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 40px; 
+}
+.nav-buttons {
+    display: flex;
+    gap: 120px; 
+    align-items: center;
+    margin-top: -13px;
+    margin-right: 40px;
+}
+.nav {
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: bold;
+    position: relative;
+    top: 15.5px;
+    padding: 10px;
+}
+.nav:hover {
+    background-color: rgb(0, 0, 0);
+    animation: 1.5s linear infinite button;
+}
+@keyframes button {
+    0% {
+        color: #D83827;
+    }
+    20% {
+        color: #D2DD22;
+    }
+    40% {
+        color: #2FDC23;
+    }
+    60% {
+        color: #31A7CE;
+    }
+    80% {
+        color: #ce37e2;
+    }
+    100% {
+        color: #D83827;
+    }
+}
+.logo {
+    margin-top: 4px;
+    transition: transform 0.3s ease-in-out 0ms;
+    filter: grayscale(100%) brightness(0) saturate(100%);
+}
+.logo:active {
+    transform: rotate(180deg) scale(1.5);
+    transition: transform 0.5s ease-in-out;
+}
+/* section for the "welcome section" */
+#welcome-section {
+    position: absolute;
+    width: 100%;
+    height: 500px;
+    left: 0;
+    top: 80px;
+    z-index: 1;
+    scroll-margin-top: 90px;
+}
+.header {
+    text-align: center;
+    color: var(--text-color1);
+    font-size: 35px;
+    transition: transform 0.3s ease-in-out 0ms;
+}
+.header:active {
+    transform: scale(1.5);
+    transition: transform 0.5s ease-in-out 0ms;
+}
+.sub-header {
+    text-align: center;
+    padding: 275px 0;
+}
+.sub-header a {
+    text-decoration: none;
+    color: var(--text-color2);
+    font-size: 20px;
+}
+.div-header {
+    border-top: 2px solid var(--text-color1);
+    border-bottom: 2px solid var(--text-color1);
+    height:100px;
+    width: 100%;
+    position: absolute;
+    top: 36.5%;
+    background: linear-gradient(
+        270deg, var(--background-color1), var(--background-color2));
+}
+
+/* section for "about me" */
+#about-me {
+    position: absolute;
+    top: 700px;
+    left: 0;
+    width: 100vw;
+    height: auto;
+    background-color: var(--text-color1);
+    scroll-margin-top: 200px;
+    text-align: center;
+}
+#about-me p {
+    max-width: 1200px;
+    margin: 20px auto;
+    font-size: 20px;
+    color: black;
+}
+
+/* section for projects */
+#projects {
+    position: absolute;
+    top: 950px;
+    left: 0;
+    width: 100vw;
+    height: 1490px;
+    background-color: var(--text-color1);
+    scroll-margin-top: 200px;
+    text-align: center;
+}
+.project-tile {
+    max-width: 1200px;
+    max-height: 400px;
+    margin: 30px auto;
+    background-color: rgba(255, 255, 255, 0.3);
+    border-radius: 10px;
+    padding: 5px;
+}
+.project-title {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 20px;
+    font-weight: bold;
+    text-decoration: underline;
+}
+.project-content {
+    display: flex;
+    gap: 20px;
+    align-items: flex-start; 
+}
+.project-left {
+    width: 300px;
+    height: 250px;
+    border-radius: 4px;
+    margin-left: 18px;  
+    margin-bottom: 18px; 
+}
+.project-right {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-right: 10px;
+    font-size: 20px;
+    text-align: left;
+}
+.project-last {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-right: 10px;
+    font-size: 20px;
+}
+#projects img:active {
+    transform: scale(1.75);
+    transition: transform 0.5s ease-in-out;
+}
+/* section for contacts */
+#contacts {
+    position: absolute;
+    top: 2500px;
+    left: 0;
+    width: 100vw;
+    height: 400px;
+    text-align: center;
+    color: var(--text-color1);
+    scroll-margin-top: 90px;
+    font-size: 18px;
+}
+#contacts a {
+    text-decoration: none;
+    color: var(--text-color2);
+}
+
+/* when changing widths */
+@media (max-width: 1000px) {
+    .nav-buttons {
+        gap: 50px;
+    }
+}
+@media (max-width: 740px) {
+    .project-right, .project-last {
+        font-size: 16px;
+    }
+}
+@media (max-width: 600px) {
+    #navbar {
+    display: none;
+  }
+    .project-right, .project-last {
+        font-size: 12px;
+    }
+}
